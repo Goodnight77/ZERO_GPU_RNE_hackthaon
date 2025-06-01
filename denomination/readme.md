@@ -35,7 +35,6 @@ tunisia-business-name-checker/
 ### Prerequisites
 
 - Python 3.8+
-- OpenAI API Key
 - Groq API Key
 - LangSmith API Key (optional, for monitoring)
 
@@ -70,14 +69,12 @@ tunisia-business-name-checker/
 ```txt
 streamlit>=1.28.0
 langchain>=0.1.0
-langchain-openai>=0.0.5
 langchain-groq>=0.0.1
 langchain-chroma>=0.1.0
 langchain-core>=0.1.0
 langsmith>=0.0.70
 streamlit-feedback>=0.1.3
 chromadb>=0.4.0
-openai>=1.10.0
 pandas>=2.0.0
 numpy>=1.24.0
 ```
@@ -86,13 +83,10 @@ numpy>=1.24.0
 
 ### API Keys Setup
 
-1. **OpenAI API Key**: Used for embeddings and language processing
-   - Get from: https://platform.openai.com/api-keys
-   
-2. **Groq API Key**: Used for fast LLM inference
+1. **Groq API Key**: Used for fast LLM inference
    - Get from: https://console.groq.com/keys
    
-3. **LangSmith API Key**: Optional, for monitoring and debugging
+2. **LangSmith API Key**: Optional, for monitoring and debugging
    - Get from: https://smith.langchain.com/
 
 ### Vector Database
