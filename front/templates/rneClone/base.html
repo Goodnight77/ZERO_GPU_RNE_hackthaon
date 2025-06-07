@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}My Site{% endblock %}</title>
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    <div class = "container">
+        <div class="top-level">
+            <div>
+                <img src="../../static/image/Republiquelogo.png" alt="Republique LOGO" width="300" height="50">
+            </div>
+            <span class="number">N° 70 248 170</span>
+        </div>
+        <div class="second-level">
+            <div>
+            <img src="../../static/image/RNElogo(2).png" alt="RNE LOGO" width="300" height="50">
+            </div>
+            <div class ="sub-second-level">
+                <img src="../../static/image/profileicone.png" alt="RNE LOGO" width="30" height="30">
+                <div class = "dos">
+                    <a href ="#">connect</a>
+                    <a href = "#">create account</a>
+                </div>
+                
+            </div>
+        </div>
+        <div class="nav-bar">
+            <a href="#">Recherche Personnes</a>
+            <a href="#">Recherche Sociétés</a>
+            <a href="#">Extrait du Registre</a>
+            <a href="#">Bulletin Officiel</a>
+            <a href="#">Convocation Assemblée Générale</a>
+            <a href="#">Payer une Redevance</a>
+            <a href="#">Immatriculer Entreprise</a>
+        </div>
+    </div>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <div class="footer-container">
+        <div class = "image"> 
+            <img src="../../static/image/image6.png" alt="RNE LOGO blue" width="224" height="112">
+        </div> 
+        <div class="rel-citoyen" >
+            <h5 id="special">RELATION AVEC LE CITOYEN</h5>
+            <p>Envoyez-nous vos réclamations ou observations</p>
+        </div>
+        <div class="contact">
+            <h5>COMMENT NOUS CONTACTER ?</h5>
+            <p>contact@registre-entreprises.tn</p>
+            <p>+21670 248 170</p>
+        </div>   
+        <div class="trouver">
+            <h5>OU NOUS TROUVER ?</h5>
+            <p>N°1 Rue LAC TOBA les Berges du Lac 2 -1053- Tunis </p>
+        </div>
+    </div>
+</body>
+</html>
+{% block extra_js %}{% endblock %}
+<style>
+    .container {
+        display: flex;
+        flex-direction: column;
+        
+    }
+    .top-level{
+        display: flex;
+        background-color: #EAEAEA;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .top-level span{
+    padding-right:  10px;}
+    .second-level{
+        display: flex;
+        background-color: #fff;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .nav-bar{
+        min-height: 50px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        background-color: #242F50;
+        align-items: center;
+
+    }
+    .nav-bar a {
+        color: white;
+        text-decoration: none;
+        padding: 12px 16px;
+        text-align: center;
+        
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+    .nav-bar a:active {
+        color: #38BEF8;
+        
+    }
+    .sub-second-level{
+        padding-right: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    .dos{
+        padding-left: 10px;
+        display: flex;
+        flex-direction: column;
+    }
+    .dos a{
+        text-decoration: none;
+        color: #7C7B7B;
+    }
+    .dos a:hover{
+        text-decoration: underline;
+    }
+    .dos a:active{
+        text-decoration: underline;
+        color: #38BEF8;
+    }
+    .footer-container{
+        padding-left: 20px;
+        background-color: #242F50 ;
+        display: flex;
+        justify-content: space-evenly;
+        
+    }
+    #special{
+        color: #38BEF8;
+    }
+    .footer-container h5{
+        color: #fff;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+    }
+    .footer-container p{
+        color: #fff;
+    }
+    @media (max-width: 768px) {
+        .nav-bar{
+        display: none;
+    }
+        .footer-container{
+        flex-direction: column;}
+    }
+</style>
+

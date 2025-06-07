@@ -1,0 +1,443 @@
+{% extends 'rneClone/base.html' %}
+
+{% block title %}Regisre Naional des Entreprises - Clone{% endblock %}
+{% block extra_css %}
+<style>
+    .main-container{
+    height: 100%;
+    background-image: url('../../static/image/Group7.png'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    background-color: #152a50;
+    display: flex;
+    justify-content: space-between;
+padding-left: 30px;
+padding-right: 30px;}
+    .nostyle{
+        text-decoration: none;
+    }
+    .right-panel {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 30px;
+      }
+      
+      .container-new-feature {
+        display: flex;
+        width: 500px;
+        gap: 20px;
+        height: 150px;
+        padding-top: 50px;
+        padding-bottom: 50px;
+      }
+      .text{
+        width: 500px;
+        }
+      .text p{
+        color: aliceblue;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;    
+    }
+      .new-feature {
+        border: 2px solid #00bcd4; /* Cyan border */
+        border-radius: 15px;
+        padding: 20px;
+        background-color: rgba(255, 255, 255, 0.05); /* Transparent white */
+        color: white;
+        text-align: center;
+        transition: background-color 0.3s, box-shadow 0.3s;
+        cursor: pointer;
+        width: 200px;
+        height: 150px;
+      }
+      .new-feature p:first-child {
+        font-size: 20px; /* or any size you prefer */
+        font-weight: bold; /* optional */
+        font-family: 'Tajawal', sans-serif; /* or any Arabic-friendly font */
+
+      }
+      .new-feature:hover {
+        background-color: rgba(0, 188, 212, 0.2); /* Cyan light */
+        box-shadow: 0 0 10px #00bcd4;
+      }
+      .grid-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1px;
+        background-color: #0b1a3d;
+        width: 500px;
+        
+        
+      }
+  
+      .grid-item {
+        background-color: #152a50;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        transition: opacity 0.3s ease;
+        cursor: pointer;
+        height: 50px;
+      }
+  
+      .grid-item:hover {
+        opacity: 0.7;
+      }
+  
+      .grid-item img {
+        height: 20px;
+        margin-bottom: 0;
+      }
+  
+      .grid-item span {
+        display: block;
+        font-weight: bold;
+      }
+
+
+
+      .vertical-scroller {
+        height: 200px;
+        overflow-y: auto;
+        border: 1px solid #ccc;
+        padding: 10px;
+        width: 200px; /* Optional: set a fixed width */
+      }
+      
+      .scroll-content p {
+        margin: 10px 0;
+      }
+
+
+      .horizontal-scroller {
+        overflow-x: auto;
+        white-space: nowrap;
+        width: 100%; /* Or set fixed width */
+        padding: 10px;
+        border: 1px solid #ccc;
+      }
+      
+      .scroll-row {
+        display: inline-flex;
+      }
+      
+      .box {
+        min-width: 150px;
+        height: 100px;
+        background: #3478f6;
+        color: white;
+        margin-right: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .carousel-wrapper {
+        width: 100%;
+        max-width: 400px;
+        border-radius: 20px;
+        padding: 30px;
+        
+    }
+
+    .carousel-title {
+        color: white;
+        margin-bottom: 30px;
+        text-align: center;
+        font-size: 1.8rem;
+        font-weight: 600;
+    }
+
+    .carousel-container {
+        position: relative;
+        height: 400px;
+        overflow: hidden;
+        border-radius: 15px;
+       
+    }
+
+    .vertical-menu {
+        list-style: none;
+        position: relative;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+        padding: 20px;
+    }
+
+    .vertical-menu li {
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .vertical-menu-item {
+        display: flex;
+        align-items: center;
+        padding: 20px 25px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
+        color: white;
+        text-decoration: none;
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        border: 2px solid transparent;
+        position: relative;
+        overflow: hidden;
+        opacity: 0.3;
+        transform: scale(0.9);
+        filter: blur(1px);
+    }
+
+    .vertical-menu-item::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        transition: left 0.5s ease;
+    }
+
+    .vertical-menu-item:hover::before {
+        left: 100%;
+    }
+
+    .vertical-menu-item.active {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0);
+        background: rgba(0, 212, 170, 0.2);
+        border-color: #2563eb;
+        box-shadow: 0 8px 30px rgba(37, 99, 235, 0.4);
+        z-index: 10;
+    }
+
+    .vertical-menu-item.active::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 5px;
+        background: linear-gradient(to bottom, #fff, rgba(255, 255, 255, 0.8));
+        border-radius: 0 3px 3px 0;
+    }
+
+    .play-icon {
+        width: 0;
+        height: 0;
+        border-left: 15px solid white;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+        margin-right: 20px;
+        opacity: 0;
+        transition: all 0.3s ease;
+        transform: translateX(-10px);
+    }
+
+    .vertical-menu-item.active .play-icon {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .menu-text {
+        flex: 1;
+    }
+
+    .menu-text .main-text {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 5px;
+        letter-spacing: 0.5px;
+    }
+
+    .menu-text .sub-text {
+        font-size: 1rem;
+        opacity: 0.9;
+        direction: rtl;
+        font-weight: 400;
+    }
+
+
+
+    @media (max-width: 768px) {
+        .carousel-wrapper {
+            padding: 20px;
+        }
+        
+        .carousel-container {
+            height: 350px;
+        }
+        
+        .vertical-menu-item {
+            padding: 15px 20px;
+        }
+        
+        .menu-text .main-text {
+            font-size: 1.1rem;
+        }
+        
+        .menu-text .sub-text {
+            font-size: 0.9rem;
+        }
+    }
+    .info{
+    display: flex;
+    justify-content: end;
+
+}
+    
+</style>
+{% endblock %}
+{% block content %}
+    <div class="main-container">
+        <div class="carousel-wrapper">
+            
+            <div class="carousel-container">
+                <ul class="vertical-menu" id="verticalMenu">
+                    <li>
+                        <a href="#" class="vertical-menu-item" data-index="0">
+                            <div class="play-icon"></div>
+                            <div class="menu-text">
+                                <div class="main-text">Télécharger Documents</div>
+                                <div class="sub-text">تحميل الوثائق</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="vertical-menu-item" data-index="1">
+                            <div class="play-icon"></div>
+                            <div class="menu-text">
+                                <div class="main-text">Recherche Personnes</div>
+                                <div class="sub-text">بحث شخص طبيعي</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="vertical-menu-item" data-index="2">
+                            <div class="play-icon"></div>
+                            <div class="menu-text">
+                                <div class="main-text">Recherche Sociétés</div>
+                                <div class="sub-text">بحث شخص معنوي</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="vertical-menu-item active" data-index="3">
+                            <div class="play-icon"></div>
+                            <div class="menu-text">
+                                <div class="main-text">Extrait du Registre</div>
+                                <div class="sub-text">استخراج مضمون</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="vertical-menu-item" data-index="4">
+                            <div class="play-icon"></div>
+                            <div class="menu-text">
+                                <div class="main-text">Bulletin Officiel</div>
+                                <div class="sub-text">الجريدة الرسمية</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="vertical-menu-item" data-index="5">
+                            <div class="play-icon"></div>
+                            <div class="menu-text">
+                                <div class="main-text">Convocation Assemblée</div>
+                                <div class="sub-text">استدعاء للجلسة العامة</div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="right-panel">
+            <div class ="container-new-feature">
+                <a class="nostyle" href="https://www.registre-entreprises.tn/rne-public/#/qr-code/validation" target="_blank",rel="noopener noreferrer">
+                <div class="new-feature">
+                    <p>التثبت من صحة المضمون</p>
+                    <p>Vérification de l‘authenticité de l‘extrait du Registre Commandé</p>
+                </div>
+                </a>
+                <a class="nostyle" href="SimulateurDenomination.html">
+                <div class="new-feature">
+                    <p>محاكاة بحث في التسمية</p>
+                    <p>Simulateur dénomination</p>
+                </div>
+            </a>
+            </div>
+
+            <div class="text">
+                <p>Plateforme optimisée pour Chrome et Microsoft Edge. L’utilisation d’un autre navigateur peut engendrer une mise en page non adaptée aux documents générés</p>
+            </div>
+            
+
+            <div class="grid-container">
+                <div class="grid-item">
+                  <img src="../../static/image/profileicone.png" alt="Icon" />
+                  <span>Information légale</span>
+                </div>
+                <div class="grid-item">
+                  <img src="../../static/image/profileicone.png" alt="Icon" />
+                  <span>Veille</span>
+                </div>
+                <div class="grid-item">
+                  <img src="../../static/image/profileicone.png" alt="Icon" />
+                  <span>Simulateur dénomination</span>
+                </div>
+                <div class="grid-item">
+                  <img src="../../static/image/profileicone.png" alt="Icon" />
+                  <span>Réserver une dénomination</span>
+                </div>
+                <div class="grid-item">
+                  <img src="../../static/image/profileicone.png" alt="Icon" />
+                  <span>E-bilan</span>
+                </div>
+                <div class="grid-item">
+                  <img src="../../static/image/profileicone.png" alt="Icon" />
+                  <span>Bénéficiaire effectif</span>
+                </div>
+              </div>
+        </div>
+        
+      
+
+    </div>
+{% endblock %}
+{% block extra_js %}
+<script>
+    let currentIndex = 3; // Start with "Extrait du Registre" active
+    const menuItems = document.querySelectorAll('.vertical-menu-item');
+
+    function updateActiveItem(index) {
+        // Remove active class from all items
+        menuItems.forEach(item => item.classList.remove('active'));
+        
+        // Add active class to current item
+        menuItems[index].classList.add('active');
+        
+        currentIndex = index;
+    }
+
+    function selectItem(index) {
+        updateActiveItem(index);
+    }
+
+    // Click event for menu items
+    menuItems.forEach((item, index) => {
+        item.addEventListener('click', function(e) {
+            e.preventDefault();
+            updateActiveItem(index);
+        });
+    });
+
+    // Initialize
+    updateActiveItem(currentIndex);
+</script>
+{% endblock %}
+

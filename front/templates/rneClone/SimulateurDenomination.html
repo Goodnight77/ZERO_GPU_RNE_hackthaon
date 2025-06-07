@@ -1,0 +1,171 @@
+{% extends 'rneClone/base.html' %}
+
+{% block title %}Home - Simple Chatbot{% endblock %}
+{% block extra_css %}
+    <style>
+        .main-container{
+            width: 100vw;        /* Full width */
+            height: 100vh;       /* Full height */
+            display: flex;
+            
+        }
+        .image{
+            background-image: url('../../static/image/image\ 4.png');
+            width: 20%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100%;
+        }
+        .information{
+            padding-left: 50px;
+            display: flex;
+            flex-direction: column;
+            width: 80%;
+        }
+        .reglement h5{
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: larger;
+            color:red ;
+        }
+        .reglement li{
+            padding-left:40px ;
+        }
+        .chat{
+            width: 60%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding-right: 40px;
+        }
+        .chat-btn{
+            background-color: #007D88;
+            color: #fff;
+            width: 250px;
+            height: 40px;
+            border: 0;
+            border-radius: 2px;
+            margin-top: 15px;
+        }
+        .options{
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+            width: 100%;
+        }
+
+        /* Login Section - Smaller and Proportional */
+        .login {
+            width: 45%;
+            padding: 40px;
+            margin-right: 40px;
+            border-radius: 8px;
+            
+        }
+        
+        .login h5 {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #333;
+        }
+        
+        .input-group {
+            margin-bottom: 15px;
+            width: 100%;
+        }
+        
+        .input-group input {
+            width: 100%;
+            border: none;
+            border-bottom: 1.5px solid #ddd;
+            padding: 8px 0;
+            font-size: 14px;
+            outline: none;
+            background: transparent;
+            transition: border-color 0.3s;
+        }
+        
+        .input-group input:focus {
+            border-bottom-color: #007D88;
+        }
+        
+        .petitcon {
+            display: flex;
+            justify-content: space-between;
+            margin: 10px 0 15px;
+            font-size: 12px;
+        }
+        
+        .petitcon span {
+            color: #007D88;
+            cursor: pointer;
+        }
+        
+        .login-btn {
+            width: 100%;
+            padding: 8px;
+            background-color: #007D88;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .login-btn:hover {
+            background-color: #006670;
+        }
+        @media (max-width: 768px) {
+            .options{
+            flex-direction: column;
+            }
+            .main-container{
+            height: 100%;}
+        }
+    </style>
+{% endblock %}
+{% block content %}
+
+<div class="main-container">
+    <div class="image"></div>
+    <div class="information">
+        <div class="reglement">
+            <h5>Exigences légales sur la rasion sociale de votre entreprise:</h5>
+            <li>Ne doit pas atteindre aux bonnes moeurs.</li>
+            <li>Ne doit pas contenir des caractères sociaux.</li>
+            <li>Ne doit pas supporter deux langues à la fois.</li>
+            <li>Conforme à la réglementation en vigueur.</li>
+            <p>Pour plus de details vous pouvez voir <a href="#">Guide réservation de la dénomination</a></p>
+        </div>
+        <div class="options">
+            <div class="chat">
+                <p>Si vous hésitez encore si votre nom sera accepté ou avez besoin d'inspiration, contactez notre chatbot assistant</p>
+                <button class="chat-btn"><a class="chat-btn" href="Chatbot.html">Assistant de dénomination</a></button>
+            </div>
+            <div class="login">
+                <h5>Sinon, utilisez notre simulateur en ligne.</h5>
+                <form>
+                    <div class="input-group">
+                        <input type="email" id="email" placeholder="Email" required>
+                    </div>
+                    
+                    <div class="input-group">
+                        <input type="password" id="password" placeholder="Mot de passe" required>
+                    </div>
+                    
+                    <div class="petitcon">
+                        <span>Mot de passe oublié</span>
+                        <span>Créer un compte</span>
+                    </div>
+                    
+                    <button type="submit" class="login-btn">Connexion</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
