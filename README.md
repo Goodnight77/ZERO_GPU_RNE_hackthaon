@@ -46,7 +46,7 @@ Validates business names against Tunisia's RNE with AI analysis.
 #### Validation Examples
 
 **✅ Available Name:**
-![Available Business Name](img/name-available.png)
+![Available Business Name](img/available.jpg)
 
 **❌ Special Characters Blocked:**
 ![Special Characters Error](img/ex2.jpg)
@@ -54,6 +54,7 @@ Validates business names against Tunisia's RNE with AI analysis.
 
 **⚠️ Similar Names Found:**
 ![Similar Names Warning](img/ex3.jpg)
+
 *Similarity analysis with risk assessment*
 
 **Use Cases:**  
@@ -69,6 +70,7 @@ Branding, legal compliance, rebranding, startup naming
 ## 📊 Performance Monitoring
 
 ![LangSmith Analytics](img/langsmith.jpg)
+
 *Real-time performance monitoring with LangSmith integration*
 
 ### Performance Metrics
@@ -77,6 +79,7 @@ Branding, legal compliance, rebranding, startup naming
 - **User Feedback:** Integrated thumbs up/down system
 
 ![Performance Dashboard](img/langsmith1.jpg)
+
 *Comprehensive performance tracking and user feedback analysis*
 
 ---
@@ -84,6 +87,7 @@ Branding, legal compliance, rebranding, startup naming
 ## 🏛️ Official Integration
 
 ![Tunisia RNE Website](img/UI.png)
+
 *Integration with official Tunisia RNE (Registre National des Entreprises)*
 
 Our Business Name Checker integrates with the official Tunisia RNE system to ensure:
@@ -92,6 +96,7 @@ Our Business Name Checker integrates with the official Tunisia RNE system to ens
 - Up-to-date business registry information
 
 ![RNE Assistant Interface](img/UI2.png)
+
 *Official RNE naming assistant integration*
 
 ---
