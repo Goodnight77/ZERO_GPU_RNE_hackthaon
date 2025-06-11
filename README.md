@@ -30,10 +30,10 @@ Meetings, lectures, interviews, memos, content creation, language learning
 ---
 
 ### 🏢 Business Name Checker AI  
-**Path:** `/Dénominateur/`  
+**Path:** `/denomination/`  
 Validates business names against Tunisia's RNE with AI analysis.
 
-![Business Name Validation Results](img/ex1.jpg)
+![Business Name Validation Results](img/ex1.jpg) <br>
 *Real-time business name validation with conflict detection*
 
 **Features:**
@@ -176,14 +176,7 @@ streamlit run app.py
 <details>
 <summary>View More Screenshots</summary>
 
-### System Analytics
-![System Performance](img/system-analytics.png)
-
-### User Interface Examples
-![UI Examples](img/ui-examples.png)
-
-### Multilingual Support
-![Arabic Interface](img/speech_UI2.png)
+To be added ...
 
 </details>
 
